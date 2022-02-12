@@ -21,6 +21,13 @@ func _process(delta: float) -> void:
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
+	if velocity.x != 0:
+		$AnimatedSprite.animation = "direita"
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = velocity.x < 0
+	if velocity.y != 0:
+		$AnimatedSprite.animation = "cima"
+		$AnimatedSprite.flip_v = velocity.y > 0
 	
 	position += velocity * delta
 	position.x = clamp(position.x, 0, scream_size.x)
