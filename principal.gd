@@ -5,16 +5,18 @@ var score
 
 func _ready():
 	randomize()
-	novo_jogo()
 
 func game_over():
 	$pontuacaoTimer.stop()
 	$inimigoTimer.stop()
+	$HUD.exibir_gameover()
 
 func novo_jogo():
 	score = 0
-#	$jogador.start($posicaoinicial.position)
+	$jogador.start($posicaoinicial.position)
 	$inicioTimer.start()
+	$HUD.exibir_mensagem("Prepare-se")
+	$HUD.atualiza_score(score)
 
 func _on_inicioTimer_timeout():
 	$inimigoTimer.start()
@@ -22,6 +24,7 @@ func _on_inicioTimer_timeout():
 
 func _on_pontuacaoTimer_timeout():
 	score += 1
+	$HUD.atualiza_score(score)
 
 func _on_inimigoTimer_timeout():
 	$caminhoInimigo/spawnInimigo.offset = randi()

@@ -6,8 +6,6 @@ export var max_speed = 300
 func _ready() -> void:
 	var tipo_inimigos = $AnimatedSprite.frames.get_animation_names()
 	$AnimatedSprite.animation = tipo_inimigos[randi() % tipo_inimigos.size()]
-	
-
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()

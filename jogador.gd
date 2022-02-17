@@ -35,3 +35,15 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 	position.x = clamp(position.x, 0, scream_size.x)
 	position.y = clamp(position.y, 0, scream_size.y)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+
+
+func _on_jogador_body_entered(body: Node):
+	hide()
+	emit_signal("hit")
+	$CollisionShape2D.set_deferred("disabled", true)
+	
