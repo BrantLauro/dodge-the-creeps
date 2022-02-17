@@ -10,6 +10,8 @@ func game_over():
 	$pontuacaoTimer.stop()
 	$inimigoTimer.stop()
 	$HUD.exibir_gameover()
+	$musica.stop()
+	$somMorte.play()
 
 func novo_jogo():
 	score = 0
@@ -17,6 +19,7 @@ func novo_jogo():
 	$inicioTimer.start()
 	$HUD.exibir_mensagem("Prepare-se")
 	$HUD.atualiza_score(score)
+	$musica.play()
 
 func _on_inicioTimer_timeout():
 	$inimigoTimer.start()
