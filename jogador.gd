@@ -3,7 +3,10 @@ extends Area2D
 export var speed = 400
 var scream_size
 
+signal hit
+
 func _ready() -> void:
+	hide()
 	scream_size = get_viewport_rect().size
 
 func _process(delta: float) -> void:

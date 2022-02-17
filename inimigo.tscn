@@ -15,14 +15,14 @@ animations = [ {
 "name": "voando",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "andando",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "nadadando",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "andando",
 "speed": 3.0
 } ]
 
@@ -31,6 +31,7 @@ radius = 36.0
 height = 30.0
 
 [node name="inimigo" type="RigidBody2D"]
+collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 7 )
 

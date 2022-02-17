@@ -24,7 +24,6 @@ radius = 40.0
 height = 22.0
 
 [node name="jogador" type="Area2D"]
-position = Vector2( 219, 261 )
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
